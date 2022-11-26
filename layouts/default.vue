@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <img />
         <AppHeader/>
         <nuxt/>
         <AppFooter/>
@@ -43,5 +44,10 @@ ul {
   overflow: hidden;
   padding: 1rem 2rem;
   background: #fff;
+}
+img {
+    /* Picture should be in static folder*/
+    /* content:url(/Bottle.png); */
+    content: url(https://picsum.photos/730/180);
 }
 </style>
