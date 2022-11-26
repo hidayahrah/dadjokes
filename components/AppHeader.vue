@@ -32,14 +32,14 @@ export default {
 }
 .header .title {
   font-size: 3rem;
-  color: #526488;
+  color: hsl(180deg 97% 22%);
 }
 .header ul {
   display: flex;
 }
 .header a {
   display: inline-block;
-  background: #333;
+  background: hsl(180deg 97% 22%);
   color: #fff;
   padding: 0.3rem 1rem;
   margin-right: 0.5rem;

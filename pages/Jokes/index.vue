@@ -1,7 +1,7 @@
 <template>
     <div>
         <SearchJokes v-on:search-text="searchText"/>
-        <Joke v-for="joke in jokes" :key="joke.id" :id="joke.id" :joke="joke.leadId"/>
+        <Joke v-for="joke in jokes" :key="joke.id" :id="joke.id" :joke="joke.joke"/>
     </div>
 </template>
 
@@ -29,11 +29,8 @@ export default {
 
         try {
 
-            const res = await axios.get('https://icanhazdadjoke.com/search', config);
-            this.jokes = res.data.results;
-            // const res = await axios.get('http://localhost:3100/transaction/v1/transaction', config);
-            // this.jokes = res.data.data;
-            // console.log(this.jokes);
+            const { data } = await axios.get('https://icanhazdadjoke.com/search', config);
+            this.jokes = data.results;
         } catch (err) {
             console.log(err);
         }
@@ -47,12 +44,8 @@ export default {
             }
 
             try {
-                const res = await axios.get(`https://icanhazdadjoke.com/search?term=${text}`, config);
-                this.jokes = res.data.results;
-                // const res = await axios.get(`http://localhost:3100/transaction/v1/transaction/?id=${text}`, config);
-                // this.jokes = res.data.data;
-                // console.log(text);
-                // console.log(this.jokes);
+                const { data } = await axios.get(`https://icanhazdadjoke.com/search?term=${text}`, config);
+                this.jokes = data.results;
             } catch (err) {
                 console.log(err);
             }
