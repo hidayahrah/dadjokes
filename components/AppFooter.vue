@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <h5 class="title">© 2022 All rights reserved.</h5>
+    <h5 class="title">© {{ currentYear }} All rights reserved.</h5>
     <ul>
       <a href="https://hidayahrah.github.io/portfolio"><h5>GitHub</h5></a>
       <a href="https://www.linkedin.com/in/hidayahrah/"><h5>LinkedIn</h5></a>
@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  name: "AppFooter"
+  name: "AppFooter",
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    };
+  },
 };
 </script>
 
